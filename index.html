@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitch Chat Hangman</title>
+    <!-- <link rel="stylesheet" href="https://ez-css.now.sh" /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="text-center" id="main-body">
+
+    <div id="main-game-content-section">
+      <h1 class="display-2" id="title-header">Twitch Chat Hangman</h1>
+      <div id="hangman">
+        <image src="images/post.svg" id="post-hangman" />
+        <image src="images/head.svg" id="head-hangman" />
+        <image src="images/body.svg" id="body-hangman" />
+        <image src="images/right-arm.svg" id="right-arm-hangman" />
+        <image src="images/left-arm.svg" id="left-arm-hangman" />
+        <image src="images/right-leg.svg" id="right-leg-hangman" />
+        <image src="images/left-leg.svg" id="left-leg-hangman" />
+      </div>
+      <h3 id="hidden-phrase"></h3>
+      <button id="reveal-phrase-button" onclick="revealHiddenPhrase()">Reveal word</button>
+      <div id="guesser-container">
+        <h5 id="guesser-header">Guesser:</h5>
+        <h4 id="guesser"></h4>
+      </div>
+      <p id="players">0 Players:</p>
+    </div>
+
+    <div id="game-status-elements-section">
+      <div id="game-status-content">
+        <h4 id="lives"></h4>
+        <h4 id="incorrect-letters"></h4>
+        <h4 id="guesser-timer"></h4>
+        <h4 id="guess-check"></h4>
+        <h4 id="start-game-countdown"></h4>
+      </div>
+    </div>
+    
+    <div id="pre-game-elements-section">
+      <div id="start-game-elements">
+        <button id="start-button" onclick="startGame()" type="button" class="btn btn-light">Start Game</button>
+        <input id="twitch-channel-input" type="text" placeholder="twitch channel" />
+        <button onclick="connectToChat()">Connect</button>
+        <h4 id="channel-connect-status"></h4>
+      </div>
+      <div id="custom-user-settings">
+        <label>Guess time</label>
+        <select class="form-select select-input-option" id="guess-time-select-input">
+          <option selected>5</option>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+        </select>
+        <label>Time to join</label>
+        <select class="form-select select-input-option" id="join-time-select-input">
+          <option selected>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option>50</option>
+          <option>60</option>
+          <option>80</option>
+          <option>120</option>
+        </select>
+        <label>Pre-made Phrases</label>
+        <select class="form-select select-input-option" id="phrases-select-input">
+          <option>Custom</option>
+          <option>Emotes</option>
+          <option>Streamers</option>
+          <option>Superheroes</option>
+        </select>
+        <label>Custom Phrases</label>
+        <textarea class="setting-input-option" id="custom-phrases-inputs-section" placeholder="Seperate words with 'ENTER' for list to be read properly"></textarea>
+      </div>
+    </div>
+
+    <script src="tmi.min.js"></script>
+    <script src="phrases.js"></script>
+    <script src="helpers.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

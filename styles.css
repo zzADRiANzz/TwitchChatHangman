@@ -1,0 +1,185 @@
+#main-body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #0E0E10;
+  color: #f8f9fa;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 3fr 1fr;
+  height: 100vh;
+}
+
+#hidden-phrase {
+  white-space: break-spaces;
+  margin: 0 20%;
+  word-wrap: break-word;
+}
+
+#start-button {
+  font-size: 1.4em;
+}
+
+#title-header {
+  margin: 30px 0;
+}
+
+#hangman {
+  display: block;
+  position: relative;
+  width: 30%;
+  margin: auto;
+}
+#post-hangman {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+#head-hangman {
+  position: absolute;
+  top: 16.9%;
+  left: 58%;
+  width: 23%;
+  height: auto;
+  display: none;
+}
+#body-hangman {
+  position: absolute;
+  top: 35.8%;
+  left: 53.6%;
+  width: 34%;
+  display: none;
+}
+#right-arm-hangman {
+  position: absolute;
+  top: 37%;
+  left: 70.2%;
+  width: 11%;
+  height: auto;
+  display: none;
+}
+#left-arm-hangman {
+  position: absolute;
+  top: 37%;
+  left: 59.6%;
+  width: 11%;
+  height: auto;
+  display: none
+}
+#right-leg-hangman {
+  position: absolute;
+  top: 67.5%;
+  left: 70.2%;
+  width: 13%;
+  height: auto;
+  display: none
+}
+#left-leg-hangman {
+  position: absolute;
+  top: 67.7%;
+  left: 57.4%;
+  width: 13%;
+  height: auto;
+  display: none
+}
+#guesser-container {
+  height: 10em;
+  width: 60%;
+  background-color: #f8f9fa;
+  text-align: center;
+  margin: 30px auto 20px auto;
+  color: #4e4e4e;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  border-radius: 1.25rem 1.25rem 0.25rem 0.25rem;
+}
+
+#guesser-header {
+  grid-row: 1/2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b484c;
+  color: #f8f9fa;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+#guesser {
+  grid-row: 2/3;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#guesser-timer {
+  color: #f8f9fa;
+}
+
+#players {
+  color: #00ffc4;
+}
+
+#guess-check {
+  color: #f79c9c;
+}
+
+#reveal-phrase-button {
+  display: none;
+}
+
+
+
+#start-game-elements {
+  display: grid;
+  place-items: center;
+  grid-gap: 10px;
+}
+
+#custom-user-settings {
+  color: black;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.setting-input-option {
+  width: 50%;
+  margin: auto;
+}
+
+#custom-phrases-inputs-section {
+  width: 90%;
+  max-height: 300px;
+}
+
+.select-input-option {
+  margin: auto;
+  width: 20%;
+}
+
+#phrases-select-input {
+  width: 35%;
+}
+
+#main-game-content-section {
+  grid-row: 1/3;
+}
+
+#game-status-content {
+  margin: 0 15px;
+}
+
+#game-status-elements-section {
+  grid-row: 1/2;
+  background-color: #1e1e21;
+  color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pre-game-elements-section {
+  grid-row: 2/3;
+  background-color: #4dc171;
+  padding: 20px 0;
+}
