@@ -34,7 +34,7 @@ const hangmanRightLegElement = document.querySelector('#right-leg-hangman');
 const hangmanLeftLegElement = document.querySelector('#left-leg-hangman');
 
 // global variables for the game
-const regex = /^[a-zA-Z]+$/;
+const regex = /^[A-Za-z0-9]+$/;
 let twitchChannelName = '';
 let connectedToChannel = false;
 let preGame = true;
@@ -109,7 +109,7 @@ client.on("message", (channel, tags, message, self) => {
     // check if guesser input is in the correct format (a single letter)
     if (!regex.test(message) || message.length !== 1) {
       guessCheckElement.style.color = '#e3ec90';
-      guessCheckElement.textContent = 'Invalid input. Only enter a single letter. Try again.';
+      guessCheckElement.textContent = 'Invalid input. Only enter a single letter or number. Try again.';
       return;
     }
     // if user guesses an already guessed letter, correct OR incorrect
