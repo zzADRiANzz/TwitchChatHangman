@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twitch Chat Hangman</title>
-    <!-- <link rel="stylesheet" href="https://ez-css.now.sh" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
@@ -15,7 +14,36 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="text-center" id="main-body">
+    <!-- Image trigger modal -->
+    <a data-bs-toggle="modal" data-bs-target="#tutorial-modal" role="button">
+      <img src="images/question-mark.svg" id="question-mark"/>
+    </a>
+    <!-- Modal -->
+    <div class="modal fade" id="tutorial-modal" tabindex="-1" aria-labelledby="tutorial-modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="tutorial-modal-label">How to play</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+          </div>
+          <div class="modal-body">
+            This game is intended to be hosted by 1 player, ideally the streamer. They can then share their screen showing this page.
+            
+            <b>1.</b> Connect to a Twitch channel by typing the channel name into the text box and clicking 'Connect'.
 
+            <b>2.</b> Adjust settings as needed and choose which set of phrases you want to play with. You can also type in custom phrases, making sure to type them in the correct format so they're registered properly.
+
+            <b>3.</b> Click 'Start Game' button and type '!join' in the twitch chat to join the game before the join time ends.
+
+            Once you've won or lost you can repeat step 3 to play again, or change setting first if wanted.
+
+            Enjoy! :)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
     <div id="main-game-content-section">
       <h1 class="display-2" id="title-header">Twitch Chat Hangman</h1>
       <div id="hangman">
@@ -89,5 +117,6 @@
     <script src="phrases.js"></script>
     <script src="helpers.js"></script>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -8,6 +8,22 @@
   height: 100vh;
 }
 
+#question-mark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+}
+
+.modal-content {
+  color: #0e0e10;
+}
+
+.modal-body {
+  white-space: pre-line;
+  padding: 0 1rem 1rem 1rem;
+}
+
 #hidden-phrase {
   white-space: break-spaces;
   margin: 0 20%;
