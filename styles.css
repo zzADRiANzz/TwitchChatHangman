@@ -32,6 +32,8 @@
 
 #start-button {
   font-size: 1.4em;
+  width: 40%;
+  margin-bottom: 15px;
 }
 
 #title-header {
@@ -142,20 +144,32 @@
 
 #reveal-phrase-button {
   display: none;
+  margin-top: 19px;
 }
-
-
 
 #start-game-elements {
   display: grid;
   place-items: center;
   grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+#twitch-channel-input {
+  width: 40%;
+}
+#connect-button {
+  width: 40%;
 }
 
 #custom-user-settings {
   color: black;
   display: grid;
-  grid-gap: 10px;
+}
+#custom-user-settings label {
+  margin-bottom: 3px;
+}
+#custom-user-settings select {
+  margin-bottom: 12px;
 }
 
 .setting-input-option {
