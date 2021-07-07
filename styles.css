@@ -193,6 +193,7 @@
 
 #main-game-content-section {
   grid-row: 1/3;
+  overflow-y: auto;
 }
 
 #game-status-content {
