@@ -41,8 +41,10 @@ let preGame = true;
 let ongoingGame = false;
 let timeLeft = 7;
 let guessTime = 20;
+let nextWordCountdown = 5;
 let startGameTimer;
 let startGuessTimer;
+let startNextWordTimer;
 
 let users = {};
 let phrases = [];
@@ -153,6 +155,7 @@ client.on("message", (channel, tags, message, self) => {
         guessCheckElement.style.color = '#aaf996';
         guessCheckElement.textContent = 'You won!'
         clearTimeout(startGuessTimer);
+        nextWord();
       }
       // reset guesser timer
       if (ongoingGame) {

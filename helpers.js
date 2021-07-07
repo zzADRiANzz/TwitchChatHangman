@@ -31,6 +31,32 @@ const resetGame = () => {
   playerCount = 0;
 }
 
+// reset variables for the next word in the same game
+const resetNextWord = () => {
+  ongoingGame = true;
+  lives = 6;
+  startGameCountdownElement.textContent = '';
+  timeLeft = Number(timeToJoinInputElement.value);
+  guessTime = Number(guessTimeInputElement.value);
+  nextWordCountdown = 5;
+  choosePhrase();
+  incorrectLettersElement.textContent = '';
+  guesserElement.textContent = '';
+  guesserTimerElement.textContent = '';
+  guesserTimerElement.style.color = '#f8f9fa';
+  hiddenPhraseElement.textContent = `Phrase: ${hiddenPhrase}`;
+  livesElement.textContent = `Lives: ${lives}`;
+  // reset hangman display
+  hangmanHeadElement.style.display = 'none';
+  hangmanBodyElement.style.display = 'none';
+  hangmanRightArmElement.style.display = 'none';
+  hangmanLeftArmElement.style.display = 'none';
+  hangmanRightLegElement.style.display = 'none';
+  hangmanLeftLegElement.style.display = 'none';
+  incorrectLetters = [];
+  correctLetters = [];
+}
+
 const revealHiddenPhrase = () => {
   hiddenPhraseElement.textContent = `Phrase: ${chosenPhrase}`;
 }
@@ -61,7 +87,7 @@ const connectToChat = () => {
 
 // functionality for start button
 const startGame = () => {
-  resetGame();  
+  resetGame();
   // reset start game timer
   clearTimeout(startGameTimer);
 
@@ -119,6 +145,26 @@ const startGame = () => {
   }
 
   startGameTimer = setInterval(countdown, 1000);
+}
+
+// once there is a win, game goes to the next word
+const nextWord = () => {
+  clearTimeout(startNextWordTimer);
+  const countdown = () => {
+    if (nextWordCountdown === -1) { // countdown ends, next word shows and game continues
+      
+      resetNextWord();
+      chooseGuesser();
+      guessCheckElement.textContent = '';
+      guesserTimerElement.textContent = `Guess Time: ${guessTime}`;
+      incorrectLettersElement.textContent = `Incorrect letters: ${incorrectLetters.join(', ')}`;
+      clearTimeout(startNextWordTimer);
+    } else { // counting down to next word showing
+      guessCheckElement.textContent = `You won! Next word in ${nextWordCountdown} seconds`
+      nextWordCountdown--;
+    }
+  }
+  startNextWordTimer = setInterval(countdown, 1000);
 }
 
 // select random joined user to guess letter
