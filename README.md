@@ -1,9 +1,8 @@
 <div align="center" id="top"> 
-  <img src="https://i.ibb.co/LxwJ1N9/twitch-chat-hangman-pic.png" alt="Twitch Chat Hangman" width="80%"/>
+  <a href="https://zzadrianzz.github.io/TwitchChatHangman/" rel="noopener noreferrer" target="_blank"><img src="https://i.ibb.co/LxwJ1N9/twitch-chat-hangman-pic.png" alt="Twitch Chat Hangman" width="80%"/></a>
 
   &#xa0;
 
-  <!-- <a href="https://tmipractice.netlify.app">Demo</a> -->
 </div>
 
 <a href="https://zzadrianzz.github.io/TwitchChatHangman/" rel="noopener noreferrer" target="_blank"><h1 align="center">Click here to play now!</h1></a>
